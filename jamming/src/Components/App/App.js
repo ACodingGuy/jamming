@@ -18,6 +18,13 @@ class App extends React.Component {
     this.playlistName = this.playlistName.bind(this);
     this.playlistTracks = this.playlistTracks.bind(this);
   }
+
+  addTrack(track) {
+    let tracks = this.state.playlistTracks;
+    tracks.push(track);
+    this.setState({playlist: tracks});
+  }
+
   render() {
     return (
 <div>
@@ -26,7 +33,8 @@ class App extends React.Component {
     <!-- Add a SearchBar component -->
     <div className="App-playlist">
       <SearchResults searchResults={this.state.searchResults} />
-      <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} />
+      <Playlist playlistName={this.state.playlistName}
+                playlistTracks={this.state.playlistTracks} />
     </div>
   </div>
 </div>
