@@ -52,7 +52,7 @@ class App extends React.Component {
         playlistName: 'New Playlist',
         playlistTracks: []
       });
-    };
+    });
   }
 
   search(term) {
